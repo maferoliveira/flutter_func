@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "nome": "Maria Fernanda Oliveira",
+        "cargo": "CEO",
+        "avatar":"",
+        "salario": 8.900,
+        "dataContratacao": "2025-01-03"
+    },
+    {
+        "id": 2,
+        "nome": "Marina Defendi",
+        "cargo": "Administrativa",
+        "avatar":"",
+        "salario": 4.600,
+        "dataContratacao": "2025-01-31"
+    },
+    {
+        "id": 3,
+        "nome": "Leticia Corrêa",
+        "cargo": "Auxiliar Administrativa",
+        "avatar":"",
+        "salario": 3.600,
+        "dataContratacao": "2025-02-02"
+    },
+    {
+        "id": 4,
+        "nome": "Luiza Corazin",
+        "cargo": "Jornalista",
+        "avatar":"",
+        "salario": 3.700,
+        "dataContratacao": "2025-02-20"
+    },
+    {
+        "id": 5,
+        "nome": "Beatriz Albuquerque",
+        "cargo": "Secretária",
+        "avatar":"",
+        "salario": 3.700,
+        "dataContratacao": "2025-03-05"
+    },
+    {
+        "id": 6,
+        "nome": "Clara Antonacci",
+        "cargo": "Desenvolvedora de Sistemas",
+        "avatar":"",
+        "salario": 5.600,
+        "dataContratacao": "2025-03-16"
+    },
+    {
+        "id": 7,
+        "nome": "Pietra Fernandes",
+        "cargo": "Gerente",
+        "avatar":"",
+        "salario": 6.200,
+        "dataContratacao": "2025-03-20"
+    },
+    {
+        "id": 8,
+        "nome": "Giovana Correa",
+        "cargo": "Faxineira",
+        "avatar":"",
+        "salario": 3.500,
+        "dataContratacao": "2025-0043-04"
+    }
+]
