@@ -3,7 +3,7 @@
         "id": 1,
         "nome": "Maria Fernanda Oliveira",
         "cargo": "CEO",
-        "avatar":"",
+        "avatar":"/assets/mafer.png",
         "salario": 8.900,
         "dataContratacao": "2025-01-03"
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "nome": "Marina Defendi",
         "cargo": "Administrativa",
-        "avatar":"",
+        "avatar":"/assets/marina.png",
         "salario": 4.600,
         "dataContratacao": "2025-01-31"
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "nome": "Leticia Corrêa",
         "cargo": "Auxiliar Administrativa",
-        "avatar":"",
+        "avatar":"/assets/leticia.png",
         "salario": 3.600,
         "dataContratacao": "2025-02-02"
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "nome": "Luiza Corazin",
         "cargo": "Jornalista",
-        "avatar":"",
+        "avatar":"/assets/luiza.png",
         "salario": 3.700,
         "dataContratacao": "2025-02-20"
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "nome": "Beatriz Albuquerque",
         "cargo": "Secretária",
-        "avatar":"",
+        "avatar":"/assets/bea.png",
         "salario": 3.700,
         "dataContratacao": "2025-03-05"
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "nome": "Clara Antonacci",
         "cargo": "Desenvolvedora de Sistemas",
-        "avatar":"",
+        "avatar":"/assets/clara.png",
         "salario": 5.600,
         "dataContratacao": "2025-03-16"
     },
@@ -51,7 +51,7 @@
         "id": 7,
         "nome": "Pietra Fernandes",
         "cargo": "Gerente",
-        "avatar":"",
+        "avatar":"/assets/pietra.png",
         "salario": 6.200,
         "dataContratacao": "2025-03-20"
     },
@@ -59,7 +59,7 @@
         "id": 8,
         "nome": "Giovana Correa",
         "cargo": "Faxineira",
-        "avatar":"",
+        "avatar":"/assets/gio.png",
         "salario": 3.500,
         "dataContratacao": "2025-0043-04"
     }

@@ -14,8 +14,6 @@ class _HomeState extends State<Home> {
   List<dynamic> funcionarios = [];
   int indice = 0;
 
-  ValueChanged<dynamic>? get onChanged => null;
-
   @override
   void initState() {
     super.initState();
@@ -23,22 +21,24 @@ class _HomeState extends State<Home> {
   }
 
   Future<void> carregarMockupJSON() async {
-    String dados = await rootBundle.loadString('assets/mockup/funcionarios.json');
+    String dados = await rootBundle.loadString(
+      'assets/mockup/funcionarios.json',
+    );
+
     setState(() {
       funcionarios = json.decode(dados);
     });
-
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Funcionários do Mês")),
+      appBar: AppBar(title: const Text("Funcionários do Mês")),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 20,
           children: [
+            const SizedBox(height: 20),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 40),
               decoration: BoxDecoration(
@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
                   BoxShadow(
                     color: AppColors.p2,
                     blurRadius: 8,
-                    offset: Offset(0, 4),
+                    offset: const Offset(0, 4),
                   ),
                 ],
               ),
@@ -58,14 +58,12 @@ class _HomeState extends State<Home> {
                 isExpanded: true,
                 underline: const SizedBox.shrink(),
                 value: funcionarios.isNotEmpty ? funcionarios[indice] : null,
-                items: funcionarios
-                    .map(
-                      (funcionario) => DropdownMenuItem<dynamic>(
-                        value: funcionario,
-                        child: Text(funcionario['nome']),
-                      ),
-                    )
-                    .toList(),
+                items: funcionarios.map((funcionario) {
+                  return DropdownMenuItem<dynamic>(
+                    value: funcionario,
+                    child: Text(funcionario['nome']),
+                  );
+                }).toList(),
                 onChanged: (value) {
                   setState(() {
                     indice = funcionarios.indexOf(value);
@@ -73,80 +71,99 @@ class _HomeState extends State<Home> {
                 },
               ),
             ),
+            const SizedBox(height: 20),
             Text(
               funcionarios.isNotEmpty
                   ? funcionarios[indice]['nome']
                   : "Nome do Funcionário",
               style: Theme.of(context).textTheme.titleMedium,
             ),
+            const SizedBox(height: 20),
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-                color: Colors.white,
+                color: const Color.fromARGB(255, 136, 180, 137),
                 boxShadow: [
                   BoxShadow(
                     color: AppColors.p2,
                     blurRadius: 8,
-                    offset: Offset(0, 4),
+                    offset: const Offset(0, 4),
                   ),
                 ],
               ),
               child: Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Column(
-                  spacing: 10,
                   children: [
-                    funcionarios.isNotEmpty
-                        ? Image.network(
-                            funcionarios[indice]['avatar'],
-                            width: 200,
-                            errorBuilder:
-                                (
-                                  BuildContext context,
-                                  Object exception,
-                                  StackTrace? stackTrace,
-                                ) => Image.asset(
-                                  'assets/funcionarios.jpg',
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+
+                      child: funcionarios.isNotEmpty
+                          ? Image.network(
+                              funcionarios[indice]['avatar'],
+                              width: 200,
+                              height: 200,
+                              fit: BoxFit.cover,
+
+                              errorBuilder: (context, exception, stackTrace) {
+                                return Image.asset(
+                                  'assets/funcionarios.png',
                                   width: 200,
-                                ),
-                          )
-                        : Image.asset(
-                            'assets/funcionarios.jpg',
-                            height: 200,
-                            width: 200,
-                          ),
+                                  height: 200,
+                                  fit: BoxFit.cover,
+                                );
+                              },
+                            )
+                          : Image.asset(
+                              'assets/funcionarios.png',
+                              width: 200,
+                              height: 200,
+                              fit: BoxFit.cover,
+                            ),
+                    ),
+                    const SizedBox(height: 10),
                     Text(
                       funcionarios.isNotEmpty
                           ? funcionarios[indice]['cargo']
                           : "",
                     ),
+
+                    const SizedBox(height: 10),
+
                     Text(
                       funcionarios.isNotEmpty
-                          ? "R\$ ${funcionarios[indice]['salario'].toStringAsFixed(2).replaceAll('.', ',')}"
-                          : "R\$ 0.00",
+                          ? "R\$ ${funcionarios[indice]['salario'].toStringAsFixed(3).replaceAll('.', ',')}"
+                          : "R\$ 0,00",
                     ),
                   ],
                 ),
               ),
             ),
+
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ElevatedButton(
                   onPressed: indice > 0
-                      ? () => setState(() {
-                          indice--;
-                        })
+                      ? () {
+                          setState(() {
+                            indice--;
+                          });
+                        }
                       : null,
-                  child: Text("Anterior"),
+                  child: const Text("Anterior"),
                 ),
+
                 ElevatedButton(
                   onPressed: indice < funcionarios.length - 1
-                      ? () => setState(() {
-                          indice++;
-                        })
+                      ? () {
+                          setState(() {
+                            indice++;
+                          });
+                        }
                       : null,
-                  child: Text("Proximo"),
+                  child: const Text("Próximo"),
                 ),
               ],
             ),

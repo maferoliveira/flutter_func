@@ -65,9 +65,9 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
 
   @override
   void dispose() {
-    super.dispose();
     _vertical.dispose();
     _horizontal.dispose();
+    super.dispose();
   }
 
   @override
@@ -77,13 +77,28 @@ class _SplashState extends State<Splash> with TickerProviderStateMixin {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 40,
           children: [
+            const SizedBox(height: 40),
+
             Transform.translate(
               offset: Offset(_x, _y),
-              child: Image.asset('assets/funcionarios.jpg', width: 150),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset(
+                  'assets/funcionarios.png',
+                  width: 150,
+                  height: 150,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-            ElevatedButton(onPressed: saida, child: Text("Entrar")),
+
+            const SizedBox(height: 40),
+
+            ElevatedButton(
+              onPressed: saida,
+              child: Text("Entrar"),
+            ),
           ],
         ),
       ),
